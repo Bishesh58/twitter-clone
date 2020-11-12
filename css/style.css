@@ -9,14 +9,56 @@
     width: 100%;
     min-height: 100vh;
     display: flex;
-    background: cadetblue;
+    background: #0F0F11;
 }
 
 .navigation__container{
     width: 20%;
-    background-color: chocolate;
     max-width: 100px;
     min-width: 70px;
+    border: 1px solid #1c1c1c;
+}
+
+.navigation{
+    color: white;
+    margin-top: 30px;
+    min-width: 100px;
+    max-width: 70px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+i {
+    font-size: 30px;
+}
+
+.home__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 40px;
+    border-right: 3px solid #00ADFF;
+}
+
+.home__link i{
+    color: #00ADFF;
+}
+.profile__container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile{
+   width: 30px;
+   height: 30px;
+   background-color: white;
+   border-radius: 50%;
+   border: 1px solid #979797; 
 }
 
 .sidebar__container{
