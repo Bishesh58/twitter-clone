@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background: cadetblue;
+}
+
+.navigation__container{
+    width: 20%;
+    background-color: chocolate;
+    max-width: 100px;
+    min-width: 70px;
+}
+
+.sidebar__container{
+    background-color: darkgreen;
+    flex: 1;
+    display: flex;
+}
+
+.tweets__sidebar{
+    height: 500px;
+    width: 200px;
+    margin: 20px;
+    background-color: ghostwhite;
+}
+
+.main{
+    background-color: crimson;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tweets__search{
+   height: 70px;
+   margin: 20px; 
+   background-color: darkviolet;
+    
+}
+
+.tweets__lists{
+    height: 500px;
+    margin: 20px;
+    background-color: darksalmon;
+}
+
+.tweets__container{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    background-color: dimgrey;
+    margin: 10px;
+
+}
