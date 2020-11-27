@@ -62,16 +62,41 @@ i {
 }
 
 .sidebar__container{
-    background-color: darkgreen;
     flex: 1;
     display: flex;
 }
 
 .tweets__sidebar{
     height: 500px;
-    width: 200px;
-    margin: 20px;
-    background-color: ghostwhite;
+    width: 300px;
+    margin-top: 30px;
+    background-color: rgb(160, 156, 156);
+    border: 1px solid #979797;
+    border-radius: 40px;
+}
+
+.tweets__trending{
+    height: 300px;
+    background-color: #a8a5a5;
+    margin: 10px;
+    border-radius: 40px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.tweets__trending h4 {
+    color: #565759;
+    margin-top: 0;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.tweets__trending li {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style: none;
+    border-top: 1px solid grey;
 }
 
 .main{
