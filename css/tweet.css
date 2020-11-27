@@ -1,0 +1,32 @@
+.tweets__container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #1c1c1c;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.user__info {
+  height: 20px;
+  background: blue;
+}
+
+.tweets__images {
+  margin: 20px 20px 0 20px;
+  font-size: 15px;
+  height: 200px;
+  border: 1px solid #1c1c1c;
+  border-radius: 20px;
+}
+
+.tweets__text {
+  margin: 20px 20px 0 20px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.tweets__date {
+  margin: 10px 0 10px 20px;
+  font-size: 10px;
+  color: #47525d;
+}

@@ -106,16 +106,6 @@ color: white;
     padding-left: 10px;
 }
 .tweets__lists{
-    height: 500px;
     margin: 20px;
-    background-color: darksalmon;
 }
 
-.tweets__container{
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-    background-color: dimgrey;
-    margin: 10px;
-
-}
