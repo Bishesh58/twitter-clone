@@ -7,8 +7,11 @@
 }
 
 .user__info {
-  height: 20px;
-  background: blue;
+  margin-left: 20px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  
 }
 
 .tweets__images {
@@ -29,4 +32,25 @@
   margin: 10px 0 10px 20px;
   font-size: 10px;
   color: #47525d;
+}
+
+.user__profile{
+   width: 30px;
+   height: 30px;
+   background-color: white;
+   border: 1px solid #979797;
+   border-radius: 50%; 
+}
+
+.user__nameContainer{
+    color: white;
+    margin-left: 10px;
+}
+
+.user__fullName{
+    font-size: 15px;
+}
+
+.username{
+    font-size: 10px;
 }
