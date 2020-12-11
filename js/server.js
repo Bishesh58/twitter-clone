@@ -1,13 +1,23 @@
 const URL = "http://localhost:5000/tweets";
 
+
+const onEnter = (e) =>{
+  if(e.key == "Enter"){
+    getTwitterData()
+  }
+}
+
 /**
  * Retrive Twitter Data from API
  */
 const getTwitterData = () => {
-    const url = "http://localhost:5000/tweets?q=coding&count=10";
-    fetch(url)
+
+    const searchTweet = document.getElementById('tweetsSearch').value;
+    if(!searchTweet) return;
+    const encodedSearchTweet = encodeURIComponent(searchTweet)
+    const fullUrl = `${URL}?q=${encodedSearchTweet}&count=10`
+    fetch(fullUrl)
     .then((response)=>{
-       
        return response.json();
     })
     .then((data)=>{
@@ -15,7 +25,8 @@ const getTwitterData = () => {
     })
 }
 
-getTwitterData();
+
+
 /**
  * Save the next page data
  */
