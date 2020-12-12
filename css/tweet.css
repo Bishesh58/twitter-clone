@@ -15,12 +15,23 @@
   
 }
 
-.tweets__images {
+.tweets__imagesContainer {
   margin: 20px 20px 0 20px;
   font-size: 15px;
   height: 200px;
   border: 1px solid #1c1c1c;
   border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.tweets__images{
+  background-image: url("https://images.pexels.com/photos/36762/scarlet-honeyeater-bird-red-feathers.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  flex-basis: 50%;
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
 }
 
 .tweets__text {

@@ -66,16 +66,19 @@ const buildTweets = (tweets, nextPage) => {
               </div>
           </div>
       </div>
-      <div class="tweets__images">
-
-      </div>
+      `
+      if(tweet.extended_entities &&
+        tweet.extended_entities.media.length > 0){
+       twitterContent+= buildImages(tweet.extended_entities.media);
+      }
+      twitterContent += `
       <div class="tweets__text">
           ${tweet.full_text}
       </div>
       <div class="tweets__date">
           20 hours ago
       </div>
-    </div>  `
+    </div> `
     })
 document.querySelector('.tweets__lists').innerHTML = twitterContent;
 
@@ -85,7 +88,16 @@ document.querySelector('.tweets__lists').innerHTML = twitterContent;
  * Build HTML for Tweets Images
  */
 const buildImages = (mediaList) => {
-
+  let imagesContent = `<div class="tweets__imagesContainer">`;
+  let imageExist = false;
+  mediaList.map((media)=>{
+    if(media.type == "photo"){
+      imageExist = true;
+      imagesContent += ` <div class="tweets__images" style="background-image: url(${media.media_url_https})"></div>`
+    }
+  })
+  imagesContent +=`</div>`
+  return imageExist? imagesContent : '';
 }
 
 /**
