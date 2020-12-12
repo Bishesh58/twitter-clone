@@ -83,3 +83,17 @@
 .username{
     font-size: 10px;
 }
+
+.welcome__message{
+  color: white;
+  text-align: center;
+}
+
+.welcome__message h5 {
+  margin-bottom: 0;
+}
+
+.welcome__message p {
+  font-size: 15px;
+  padding: 8px;
+}

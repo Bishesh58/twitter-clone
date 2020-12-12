@@ -24,6 +24,7 @@
     margin-top: 30px;
     min-width: 100px;
     max-width: 70px;
+    position: fixed;
 }
 
 .logo{
@@ -73,6 +74,7 @@ i {
     background-color: rgb(160, 156, 156);
     border: 1px solid #979797;
     border-radius: 40px;
+    position: fixed;
 }
 
 .tweets__trending{
