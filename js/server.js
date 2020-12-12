@@ -70,6 +70,7 @@ const buildTweets = (tweets, nextPage) => {
       if(tweet.extended_entities &&
         tweet.extended_entities.media.length > 0){
        twitterContent+= buildImages(tweet.extended_entities.media);
+       twitterContent += buildVideo(tweet.extended_entities.media)
       }
       twitterContent += `
       <div class="tweets__text">
@@ -104,5 +105,24 @@ const buildImages = (mediaList) => {
  * Build HTML for Tweets Video
  */
 const buildVideo = (mediaList) => {
-
+  let videoContent = `<div class="tweets__videoContainer">`;
+  let videoExist = false;
+  mediaList.map((media)=>{
+    if(media.type == "video"){
+      videoExist = true;
+      videoContent += `  
+          <video controls>
+            <source src="${media.video_info.variants[0].url}" type="video/mp4">
+          </video> `
+    }
+    else if(media.type == "animated_gif"){
+      videoExist = true;
+      videoContent += `  
+          <video loop autoplay>
+            <source src="${media.video_info.variants[0].url}" type="video/mp4">
+          </video> `
+    }
+  })
+  videoContent +=`</div>`
+  return videoExist? videoContent : '';
 }
