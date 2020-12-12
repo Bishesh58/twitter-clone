@@ -89,6 +89,7 @@ i {
     margin-top: 0;
     font-size: 16px;
     padding-bottom: 10px;
+   
 }
 
 .tweets__trending li {
@@ -97,6 +98,7 @@ i {
     padding-bottom: 10px;
     list-style: none;
     border-top: 1px solid grey;
+    cursor: pointer;
 }
 
 .main{

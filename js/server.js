@@ -37,6 +37,10 @@ const saveNextPage = (metadata) => {
  * Handle when a user clicks on a trend
  */
 const selectTrend = (e) => {
+  const text = e.innerText;
+  console.log(text);
+  document.getElementById("tweetsSearch").value = text;
+  getTwitterData()
 }
 
 /**
