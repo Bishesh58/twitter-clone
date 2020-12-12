@@ -67,6 +67,8 @@
    background-color: white;
    border: 1px solid #979797;
    border-radius: 50%; 
+   background-position: center;
+   background-size: cover;
 }
 
 .user__nameContainer{
