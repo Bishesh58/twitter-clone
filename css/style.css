@@ -137,3 +137,20 @@ color: white;
     margin-top: 0;
 }
 
+.next__pageContainer{
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-bottom: 20px;
+   color: #47525d;
+   border: 1px solid #1c1c1c;
+   border-radius: 20px;
+   padding: 6px;
+   text-align: center; 
+   cursor: pointer;
+   transition: 0.3s all ease-in-out;
+   visibility: hidden;
+}
+
+.next__pageContainer:hover{
+    background-color: #1c1c1c;
+}

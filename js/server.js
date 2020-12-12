@@ -1,5 +1,5 @@
 const URL = "http://localhost:5000/tweets";
-
+let nextPageURL = null;
 
 const onEnter = (e) =>{
   if(e.key == "Enter"){
@@ -7,21 +7,32 @@ const onEnter = (e) =>{
   }
 }
 
+
+const onNextPage = () =>{
+  if(nextPageURL){
+    getTwitterData(true);
+  }
+}
 /**
  * Retrive Twitter Data from API
  */
-const getTwitterData = () => {
+const getTwitterData = (nextPage = false) => {
 
     const searchTweet = document.getElementById('tweetsSearch').value;
     if(!searchTweet) return;
     const encodedSearchTweet = encodeURIComponent(searchTweet)
-    const fullUrl = `${URL}?q=${encodedSearchTweet}&count=10`
+    let fullUrl = `${URL}?q=${encodedSearchTweet}&count=10`;
+    if(nextPageURL && nextPage){
+      fullUrl = nextPageURL;
+    }
     fetch(fullUrl)
     .then((response)=>{
        return response.json();
     })
     .then((data)=>{
-      buildTweets(data.statuses)
+      buildTweets(data.statuses, nextPage);
+      saveNextPage(data.search_metadata);
+      nextPageButtonVisibility(data.search_metadata);
     })
 }
 
@@ -31,6 +42,11 @@ const getTwitterData = () => {
  * Save the next page data
  */
 const saveNextPage = (metadata) => {
+  if(metadata.next_results){
+    nextPageURL = `${URL}${metadata.next_results}`
+  } else{
+    nextPageURL = null;
+  }
 }
 
 /**
@@ -47,6 +63,11 @@ const selectTrend = (e) => {
  * Set the visibility of next page based on if there is data on next page
  */
 const nextPageButtonVisibility = (metadata) => {
+  if(metadata.next_results){
+    document.getElementById('next__Page').style.visibility = "visible";
+  } else{
+    document.getElementById('next__Page').style.visibility = "hidden";
+  }
 }
 
 /**
@@ -86,8 +107,12 @@ const buildTweets = (tweets, nextPage) => {
       </div>
     </div> `
     })
-document.querySelector('.tweets__lists').innerHTML = twitterContent;
-
+    if(nextPage){
+      document.querySelector('.tweets__lists').insertAdjacentHTML('beforeend', twitterContent);
+    } else{
+      document.querySelector('.tweets__lists').innerHTML = twitterContent;
+    }
+ 
 }
 
 /**
