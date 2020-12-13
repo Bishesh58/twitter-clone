@@ -60,6 +60,9 @@ i {
    background-color: grey;
    border-radius: 50%;
    border: 1px solid rgb(56, 68, 77); 
+   background-image: url(../assets/default.png);
+   background-position: center;
+   background-size: cover;
 }
 
 .sidebar__container{
