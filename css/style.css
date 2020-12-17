@@ -105,7 +105,6 @@ i {
     background-color: white;
 }
 .tweets__trending h4 {
-    color: #565759;
     margin-top: 0;
     font-size: 16px;
     padding-bottom: 10px;
@@ -119,6 +118,7 @@ i {
     list-style: none;
     border-top: 1px solid rgb(56, 68, 77);
     cursor: pointer;
+    color: grey;
 }
 
 .main{

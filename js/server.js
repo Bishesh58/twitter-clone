@@ -2,7 +2,6 @@ const URL = "http://localhost:5000/tweets";
 let nextPageURL = null;
 
 
-
 const onEnter = (e) =>{
   if(e.key == "Enter"){
     getTwitterData()
@@ -56,7 +55,6 @@ const saveNextPage = (metadata) => {
  */
 const selectTrend = (e) => {
   const text = e.innerText;
-  console.log(text);
   document.getElementById("tweetsSearch").value = text;
   getTwitterData()
 }
@@ -101,7 +99,7 @@ const buildTweets = (tweets, nextPage) => {
        twitterContent += buildVideo(tweet.extended_entities.media)
       }
       twitterContent += `
-      <div class="tweets__text">
+      <div class="tweets__text || light">
           ${tweet.full_text}
       </div>
       <div class="tweets__date">
@@ -166,13 +164,16 @@ const checkbox = document.getElementById('input__checkbox');
 const container = document.querySelector(".container");
 const tweets__sidebar = document.querySelector(".tweets__sidebar");
 const tweets__trending = document.querySelector(".tweets__trending");
-const tweets__text = document.querySelector(".tweets__text");
+const tweetsSearch = document.getElementById("tweetsSearch");
+const welcome__message = document.querySelector(".welcome__message")
+
 
 
 checkbox.addEventListener('change', ()=>{
   container.classList.toggle('light');
   tweets__sidebar.classList.toggle('light');
   tweets__trending.classList.toggle('light');
-  tweets__text.classList.toggle('light');
+  tweetsSearch.style.color = 'grey';
+  welcome__message.style.color = 'grey';
 })
 
