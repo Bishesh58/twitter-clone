@@ -1,6 +1,8 @@
 const URL = "http://localhost:5000/tweets";
 let nextPageURL = null;
 
+
+
 const onEnter = (e) =>{
   if(e.key == "Enter"){
     getTwitterData()
@@ -158,3 +160,19 @@ const buildVideo = (mediaList) => {
   videoContent +=`</div>`
   return videoExist? videoContent : '';
 }
+
+//dark mode
+const checkbox = document.getElementById('input__checkbox');
+const container = document.querySelector(".container");
+const tweets__sidebar = document.querySelector(".tweets__sidebar");
+const tweets__trending = document.querySelector(".tweets__trending");
+const tweets__text = document.querySelector(".tweets__text");
+
+
+checkbox.addEventListener('change', ()=>{
+  container.classList.toggle('light');
+  tweets__sidebar.classList.toggle('light');
+  tweets__trending.classList.toggle('light');
+  tweets__text.classList.toggle('light');
+})
+

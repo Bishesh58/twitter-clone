@@ -55,6 +55,10 @@
   color: rgba(255, 255, 255, 0.74);
 }
 
+.tweets__text.light{
+  color: black;
+}
+
 .tweets__date {
   margin: 10px 0 10px 20px;
   font-size: 10px;
@@ -97,3 +101,4 @@
   font-size: 15px;
   padding: 8px;
 }
+
